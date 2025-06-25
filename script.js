@@ -48,7 +48,7 @@ listcontainer.addEventListener("click", function(e) {
 
         if (e.target.innerText.toLowerCase() === "update") {
         
-            inp2.style.display = "inline";
+            inp2.style.display = "flex";
             inp2.focus();
             li.childNodes[0].nodeValue = ""; 
             e.target.innerText = "Save";
