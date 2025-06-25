@@ -44,7 +44,7 @@ input{
     background: transparent;
 
 }
-button{
+.btn1{
     border: none;
     outline:none;
     padding: 16px 50px;
@@ -53,6 +53,29 @@ button{
     font-size: 16px;
     cursor: pointer;
     border-radius: 40px;
+}
+.btn2{
+    background-color: #f5f2f2;
+color:greenyellow;
+cursor: pointer;
+outline: none;
+display: flex;
+justify-content: center;
+align-items: center;
+     position: absolute;
+    right: 50px;
+    border-radius:15px 15px 15px 15px ;
+    top: 5px;
+    width: 70px;
+    height: 40px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border: none;
+  
+}
+.btn2:hover{
+    border: 2px solid #ff5945;;
 }
 #list li{
     list-style: none;
@@ -93,6 +116,46 @@ ul li span{
     text-align: center;
 }
 ul li span:hover{
-    background: #edeef0;
+   
+}
+.bk{
+    background-color: #ff5945;
+    color: white;
     border-radius: 50%;
+}
+.inp2{
+    background-color: #edeef0;
+    position: relative;
+    left: 0px;
+    top:0px;
+    display:flex;
+    width: 70%;
+    height: 25px;
+border-radius: 5px 5px 5px 5px;
+}
+.inp2:hover{
+    border: 1px solid #ff5945; 
+    
+}
+.inp3{
+    background-color: #edeef0;
+    position: relative;
+    left: 50px;
+    top:10px;
+    display:flex;
+}
+.dv{
+    background-color: #ff5945;
+    flex-direction: column;
+    display: none;
+    height: 30px;
+flex-wrap: wrap;
+}
+.dv2{
+    background-color: #ff5945;
+    flex-direction: column;
+    display: flex;
+    height: 30px;
+flex-wrap: wrap;
+    
 }

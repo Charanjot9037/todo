@@ -1,43 +1,74 @@
-const input=document.getElementById("input-box");
-const listcontainer =document.getElementById("list");
 
+const input = document.getElementById("input-box");
+const listcontainer = document.getElementById("list");
 
-function addtask(){
-   if(input.value=='')
-   {
-    alert("Please enter something");
-   }
-   else{
-    
-    let li=document.createElement('li');
-    li.innerText=(input.value);
-    listcontainer.appendChild(li);
-    let span=document.createElement("span");
-    span.innerHTML="\u00d7"
-    li.appendChild(span);
- 
+function addtask() {
+    if (input.value === '') {
+        alert("Please enter something");
+    } else {
+        let li = document.createElement('li');
+        let js=input.value;
+        
+        li.innerText = input.value.toUpperCase();
+        listcontainer.appendChild(li);
+
+        let span = document.createElement("span");
+        span.innerHTML = "\u00d7";
+        span.classList.add("bk");
+        li.appendChild(span);
+
+        let btn = document.createElement("button");
+        btn.innerText = "Update";
+        btn.classList.add("btn2");
+        li.appendChild(btn);
+
+        let inp2 = document.createElement("input");
+        inp2.classList.add("inp2");
+        inp2.value = input.value;
+        inp2.style.display = "none"; // hidden by default
+        li.appendChild(inp2);
+    }
+
+    input.value = "";
+    setdata();
 }
-   input.value="";
-setdata();
-  } 
-let key="name";
 
-listcontainer.addEventListener("click",function(e){
-    if(e.target.tagName ==="LI"){
+let key = "name";
+
+listcontainer.addEventListener("click", function(e) {
+    if (e.target.tagName === "LI") {
         e.target.classList.toggle("check");
-    setdata();
-    }
-    else if(e.target.tagName=="SPAN"){
+        setdata();
+    } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
-    setdata();
-    }
-},false);
+        setdata();
+    } else if (e.target.tagName === "BUTTON") {
+        const li = e.target.parentElement;
+        const inp2 = li.querySelector(".inp2");
 
-function setdata(){
-    localStorage.setItem("name",listcontainer.innerHTML);
+        if (e.target.innerText.toLowerCase() === "update") {
+        
+            inp2.style.display = "inline";
+            inp2.focus();
+            li.childNodes[0].nodeValue = ""; 
+            e.target.innerText = "Save";
+        } else {
+            
+            const newValue = inp2.value;
+            li.childNodes[0].nodeValue = newValue; 
+            inp2.style.display = "none";
+            e.target.innerText = "Update";
+            setdata();
+        }
+    }
+}, false);
+
+function setdata() {
+    localStorage.setItem("name", listcontainer.innerHTML);
 }
-function show(){
-    listcontainer.innerHTML=localStorage.getItem("name");
+
+function show() {
+    listcontainer.innerHTML = localStorage.getItem("name");
 }
-    show();
+show();
 
