@@ -84,6 +84,7 @@ align-items: center;
 user-select: none;
 cursor: pointer;
 position: relative;
+
 }
 ul li::before{
     content: '';
@@ -125,12 +126,12 @@ ul li span:hover{
 }
 .inp2{
     background-color: #edeef0;
-    position: relative;
-    left: 0px;
-    top:0px;
+position: absolute;
+top: 8px;
     display:flex;
-    width: 70%;
-    height: 25px;
+    width: 60%;
+    height: 31px;
+    padding: 10px 10px 10px 10px;
 border-radius: 5px 5px 5px 5px;
 }
 .inp2:hover{

@@ -7,7 +7,7 @@ function addtask() {
         alert("Please enter something");
     } else {
         let li = document.createElement('li');
-        let js=input.value;
+    
         
         li.innerText = input.value.toUpperCase();
         listcontainer.appendChild(li);
@@ -54,7 +54,7 @@ listcontainer.addEventListener("click", function(e) {
             e.target.innerText = "Save";
         } else {
             
-            const newValue = inp2.value;
+            const newValue = inp2.value.toUpperCase();
             li.childNodes[0].nodeValue = newValue; 
             inp2.style.display = "none";
             e.target.innerText = "Update";
