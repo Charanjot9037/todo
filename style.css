@@ -42,7 +42,7 @@ input{
     border: none;
     outline: none;
     background: transparent;
-
+font-size: 17px;
 }
 .btn1{
     border: none;
@@ -130,6 +130,7 @@ position: absolute;
 top: 8px;
     display:flex;
     width: 60%;
+    font-size: 17px;
     height: 31px;
     padding: 10px 10px 10px 10px;
 border-radius: 5px 5px 5px 5px;

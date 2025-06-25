@@ -53,12 +53,17 @@ listcontainer.addEventListener("click", function(e) {
             li.childNodes[0].nodeValue = ""; 
             e.target.innerText = "Save";
         } else {
-            
+            if(inp2.value=='')
+            {
+                alert("Enter something");
+            }
+            else{
             const newValue = inp2.value.toUpperCase();
             li.childNodes[0].nodeValue = newValue; 
             inp2.style.display = "none";
             e.target.innerText = "Update";
             setdata();
+            }
         }
     }
 }, false);
